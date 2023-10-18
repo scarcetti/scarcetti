@@ -1,0 +1,43 @@
+{
+  "name": "boiler-plate",
+  "version": "1.0.0",
+  "private": true,
+  "description": "boiler-plate",
+  "author": "ThomasRhodz",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "lazybox": "gatsby develop -H 0.0.0.0 --port 8000"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@hookform/resolvers": "^3.1.1",
+    "@loadable/component": "^5.15.3",
+    "@mui/icons-material": "^5.14.1",
+    "@mui/material": "^5.14.2",
+    "@reduxjs/toolkit": "^1.9.5",
+    "gatsby": "^5.11.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-manifest": "^5.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.45.2",
+    "react-icons": "^4.10.1",
+    "react-quill": "^2.0.0",
+    "react-redux": "^8.1.2",
+    "react-spinners": "^0.13.8",
+    "redux-persist": "^6.0.0",
+    "yup": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=18.14.0"
+  }
+}
