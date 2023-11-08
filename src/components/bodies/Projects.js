@@ -1,85 +1,94 @@
 import React from "react";
-import { Container, Typography, Paper, Stack, Box, Grid } from "@mui/material";
-import homeStyles from "../../styles/homeStyles";
-import BackgroundImage from "../../images/test.jpg";
-// import BackgroundImage from "../../images/prj1.jpg";
-// import BackgroundImage from "../../images/prj2.png";
+import { Container, Typography, useMediaQuery, Card, CardMedia, CardContent, Grid, Box, Button } from "@mui/material";
+import style from "../../styles/style";
+import ArtsImage from "../../images/scarcetti.png";
+import UXImage from "../../images/ux_cover.png";
+import imgWebsiteBlue from "../../images/website_blue.png";
+import { navigate } from "gatsby";
+
+// import ocraext from '../../fonts/OCRAEXT.otf';
+// import BackgroundImage from "../../images/test.jpg";
 
 const Projects = () => {
-    const classes = homeStyles;
+    const bluePalette = style.BluePalette;
+    const sunsetPalette = style.sunsetPalette;
+    const globalStyle = style.globalStyles;
+    const projectsStyles = style.projectsStyles;
+
+    const xsWidth = useMediaQuery('(max-width:899px)');
+    const fontSize = xsWidth ? "5px" : "2rem";
 
     return (
-        <Container maxWidth="false" sx={{ marginTop: "var(--drawer-width)" }}>
-            <Container sx={classes.container} maxWidth="md">
-                <Typography align="justify" variant="subtitle2" sx={classes.normalText}>
-                    Projects
-                </Typography>
-                <Grid container spacing={2}>
-                    {Array.from({ length: 1 }, (item, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index} sx={{background: 'red', }}  >
-                            <Paper align="center"
-                                sx={{
-                                    position: 'relative',
-                                    padding: '10px',
-                                    height: '350px',
-                                    backgroundImage: `url(${BackgroundImage})`,
-                                    backgroundSize: "cover",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundPosition: "center",
-                                    borderRadius: '7px',
-                                    border: '2px solid rgba(255, 255, 255, 0.7)',
-                                    "&:hover": {
-                                        color: "transparent",
-                                        backgroundImage: `url(${BackgroundImage})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        border: '5px solid rgba(255, 255, 255, 0.7)',
-                                    },
-                                }}
-                            >
-                                <Paper
-                                    sx={{
-                                        position: 'absolute',
-                                        top: 0,
-                                        left: 0,
-                                        right: 0,
-                                        bottom: 0,
-                                        background: 'rgba(0, 0, 0, 0.45)',
-                                        borderRadius: 'inherit',
-                                    }}
-                                >
-                                    <Stack direction="column" alignItems="center" sx={{ width: '100%', zIndex: 1 }}>
-                                        <Typography variant="h3" align="center"
-                                            sx={{
-                                                mt: 3, ...classes.prjTitle,
-                                                fontSize: '2rem',
-                                            }}>
-                                            Magic Numbers Project
+        <Container maxWidth="false" sx={{ minHeight: "100vh", marginTop: "var(--drawer-width)" }}>
+            <Container sx={globalStyle.container} maxWidth="md">
+                <code align="center" style={bluePalette.codeStyles}>/Projects</code>
+                <Container
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: '10px',
+                    }}
+                >
+                    <Grid container spacing={1}>
+                        <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
+                            <Button type="button" onClick={() => navigate("/")}>
+                                <Card sx={projectsStyles.card}>
+                                    <CardMedia
+                                        component="img"
+                                        height="194"
+                                        image={ArtsImage}
+                                        alt="arts"
+                                        sx={projectsStyles.img}
+                                    />
+                                    <CardContent sx={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))' }}>
+                                        <Typography variant="h6" color="white" align="center">
+                                            Artworks
                                         </Typography>
-                                        <Box sx={{
-                                            background: 'rgba(0, 0, 0, 0.7)',
-                                            position: 'absolute',
-                                            bottom: 0,
-                                            width: '100%',
-                                            height: '50%',
-                                            borderBottomLeftRadius: '7px',
-                                            borderBottomRightRadius: '7px',
-                                            padding: '10px',
-                                        }}>
-                                            <Typography variant="caption" align="center"
-                                                sx={{
-                                                    ...classes.normalText,
-                                                    mt: 0.5,
-                                                }}>
-                                                Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur
-                                            </Typography>
-                                        </Box>
-                                    </Stack>
-                                </Paper>
-                            </Paper>
+                                    </CardContent>
+                                </Card>
+                            </Button>
                         </Grid>
-                    ))}
-                </Grid>
+                        <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
+                        <Button type="button" onClick={() => navigate("/")}>
+                            
+                             <Card sx={projectsStyles.card}>
+                                <CardMedia
+                                    component="img"
+                                    height="194"
+                                    image={ArtsImage}
+                                    alt="arts"
+                                    sx={projectsStyles.img}
+                                />
+                                <CardContent sx={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))' }}>
+                                    <Typography variant="h6" color="white" align="center">
+                                        UX/UI Designs
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                            </Button>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
+                        <Button type="button" onClick={() => navigate("/")}>
+
+                             <Card sx={projectsStyles.card}>
+                                <CardMedia
+                                    component="img"
+                                    height="194"
+                                    image={ArtsImage}
+                                    alt="arts"
+                                    sx={projectsStyles.img}
+                                />
+                                <CardContent sx={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))' }}>
+                                    <Typography variant="h6" color="white" align="center">
+                                        Websites
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Container>
             </Container>
         </Container>
     );

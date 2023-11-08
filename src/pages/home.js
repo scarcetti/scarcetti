@@ -6,8 +6,8 @@ import Projects from "../components/bodies/Projects";
 import ContactUs from "../components/bodies/ContactUs";
 import theme from "../styles/theme.js";
 import { ThemeProvider, CssBaseline, Box } from "@mui/material";
-import BackgroundImage from "../images/luchtech1.png";
-// import BackgroundImage from "../images/test.jpg";
+// import BackgroundImage from "../images/luchtech1.png";
+import BackgroundImage from "../images/7.png";
 
 const HomePage = () => {
 
@@ -40,7 +40,7 @@ const HomePage = () => {
               zIndex: 3,
             }}
           >
-            <MainDrawer />
+            {/* <MainDrawer /> */}
           </Box>
           <Box
             id="parallax-container"

@@ -1,0 +1,79 @@
+import * as React from "react";
+import Projects from "../components/bodies/Projects";
+import theme from "../styles/theme.js";
+import { ThemeProvider, CssBaseline, Box } from "@mui/material";
+import BackgroundImage from "../images/7.png";
+import BackgroundImage1 from "../images/1.png";
+
+const ProjectsPage = () => {
+
+     const handleScroll = () => {
+       const scrollPosition = window.scrollY;
+       const backgroundPosition = `center ${-scrollPosition / 2}px`;
+       document.getElementById("parallax-container").style.backgroundPosition = backgroundPosition;
+     };
+   
+     React.useEffect(() => {
+       window.addEventListener("scroll", handleScroll);
+       return () => {
+         window.removeEventListener("scroll", handleScroll);
+       };
+     }, []);
+   
+    return (
+        <>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Box
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        minHeight: "100vh",
+                    }}
+                >
+                    <Box
+                        style={{
+                            zIndex: 3,
+                        }}
+                    >
+                        {/* <MainDrawer /> */}
+                    </Box>
+                    <Box
+                        id="parallax-container"
+                        style={{
+                            zIndex: 2,
+                            overflowY: "auto",
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            display: "flex",
+                            flexDirection: "column",
+
+                        }}
+                    >
+                        <Projects />
+                    </Box>
+                    <Box
+                        id="parallax-background"
+                        style={{
+                            backgroundImage: `url(${BackgroundImage})`,
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "center",
+                            flex: 1,
+                            position: "relative",
+                            zIndex: 1,
+                        }}
+                    ></Box>
+                </Box>
+            </ThemeProvider>
+
+        </>
+    )
+};
+
+export default ProjectsPage;
+
+export const Head = () => <title>Projects</title>;

@@ -14,6 +14,9 @@ const theme = createTheme({
       "Helvetica",
       "Arial",
       "sans-serif",
+      "Poppins",
+      "Lato",
+      "OCRAEXT"
     ].join(","),
     // Other typography options...
   },

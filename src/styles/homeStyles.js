@@ -1,4 +1,4 @@
-import BackgroundImage from "../images/3.jpg";
+import BackgroundImage from "../images/bg.jpg";
 const homeStyles = {
     container: {
         display: "flex",
@@ -17,23 +17,33 @@ const homeStyles = {
         backgroundSize: "cover",
         backgroundPosition: "center",
     },
+    SkyBlue: {
+        position: "relative",
+        zIndex: 1,
+        backgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+        backgroundImage: `url(${BackgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+    },
     normalText: {
         color: "#ffffff",
-        fontFamily:'Segoe UI',
+        fontFamily:'Poppins',
         "&:hover": {
             color:"red"
         },
     },
     titles: {
         color: "#ffffff",
-        fontFamily:'Segoe UI',
+        fontFamily:'Poppins',
         "&:hover": {
             color:"red"
         },
     },
     buttonText: {
         color: "#ffffff",
-        fontFamily:'Segoe UI',
+        fontFamily:'Poppins ',
         "&:hover": {
             color:"red",
             fontWeight:'bold',
@@ -52,7 +62,7 @@ const homeStyles = {
     },
     prjTitle: {
         color: "#ffffff",
-        fontFamily:'Segoe UI',
+        fontFamily:'Poppins',
        /*  "&:hover": {
             fontWeight:'bold',
         }, */
@@ -93,10 +103,17 @@ const homeStyles = {
     },
     boxShadow: 24,
 };
-const testStyle = {
+const BluePalette = {
     normalText: {
-        color: "green",
+        color: "#0C6F9E",
+        fontFamily:'Poppins',
+        "&:hover": {
+            color:"red"
+        },
     },
 }
 
-export default homeStyles;
+export default {
+  homeStyles,
+  BluePalette,
+};
