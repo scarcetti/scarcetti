@@ -1,7 +1,9 @@
+
 import BackgroundImage from "../images/bg.jpg";
-import BackgroundImage1 from "../images/test.jpg";
-import test from "../images/scarcetti.png";
-import ocraext from '../fonts/OCRAEXT.otf';
+import BackgroundImage1 from "../images/artworks/test.jpg";
+import test from "../images/artworks/scarcetti.png";
+
+
 
 const globalStyles = {
     container: {
@@ -58,13 +60,13 @@ const globalStyles = {
         border: '2px solid rgba(255, 255, 255, 0.7)',
     },
     title: {
-        maxWidth: 345,
+        // maxWidth: 345,
         background: 'rgba(0, 0, 0, 0.7)',
         position: 'absolute',
         bottom: 0,
         width: '100%',
-        borderBottomLeftRadius: '7px',
-        borderBottomRightRadius: '7px',
+        borderBottomLeftRadius: '3px',
+        borderBottomRightRadius: '3px',
         padding: '10px',
     },
     normalText: {
@@ -73,7 +75,7 @@ const globalStyles = {
     },
 };
 const projectsStyles = {
-    card: {
+   /*  card: {
         maxWidth: 345, 
         minWidth: 150, 
         height:'300',
@@ -81,6 +83,18 @@ const projectsStyles = {
         flexDirection: 'column',
         justifyContent: 'space-between',
         background: 'rgba(255, 255, 255, 0)'
+    }, */
+    card: {
+        position: 'relative',
+        width: '100%',
+        height:'300px',
+        display: 'flex',
+        // backgroundImage: `url(${test})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        borderRadius: '3px',
+        border: '1px solid rgba(255, 255, 255, 0.7)',
     },
     img: {
         opacity: 4, 
@@ -91,17 +105,21 @@ const projectsStyles = {
     },
     title: {
         maxWidth: 345,
-        background: 'rgba(0, 0, 0, 0.7)',
+        background: 'rgba(0, 0, 0, 0.8)',
         position: 'absolute',
         bottom: 0,
         width: '100%',
-        borderBottomLeftRadius: '7px',
-        borderBottomRightRadius: '7px',
+        borderBottomLeftRadius: '3px',
+        borderBottomRightRadius: '3px',
         padding: '10px',
+        justifyContent:'center',
+        alignItems:'center'
     }
 }
 const galleryStyles = {
+    
     card: {
+    
         position: 'relative',
         height: '250px',
         width: '100%',
@@ -109,18 +127,32 @@ const galleryStyles = {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        borderRadius: '7px',
-        border: '2px solid rgba(255, 255, 255, 0.7)',
+        borderRadius: '3px',
+        border: '1px solid rgba(255, 255, 255, 0.7)',
+        transition: "opacity 0.5s ease", 
+        "&:hover": {
+            transform: 'scale(1.05)',  // Optional: Add a scaling effect on hover
+            "& .title": {
+                opacity: 1,
+            },
+        },
     },
     title: {
-        background: 'linear-gradient(30deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1))',
+        background: 'linear-gradient(30deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1))',
         position: 'absolute',
         bottom: 0,
+        // height:'80%',
         width: '100%',
         borderBottomLeftRadius: '7px',
         borderBottomRightRadius: '7px',
         padding: '10px',
+        opacity:0,
+        "&:hover": {
+            opacity:'100',
+            transition: ".5s ease",
+        }
     },
+    
     itemTitleCard: {
         position: 'absolute',
         top: 0,
@@ -130,6 +162,62 @@ const galleryStyles = {
         background: 'rgba(0, 0, 0, 0.45)',
         borderRadius: 'inherit',
     },
+    cardList: {
+    
+        position: 'relative',
+        // height: '250px',
+        width: '98%',
+        // backgroundImage: `url(${test})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        // borderRadius: '3px',
+        // border: '1px solid rgba(255, 255, 255, 0.7)',
+        transition: "opacity 0.3s ease", 
+        "&:hover": {
+            backgroundSize: "contain",
+            // background: 'linear-gradient(30deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
+            // backgroundImage: `url(${test})`,
+            // transform: 'scale(1.1)',
+        }
+     
+    },
+    titleList: {
+        background: 'linear-gradient(30deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
+        // background: 'linear-gradient(30deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))',
+        position: 'absolute',
+        bottom: 0,
+        height:'100%',
+        width: '100%',
+        borderBottomLeftRadius: '3px',
+        borderBottomRightRadius: '3px',
+        padding: '10px',
+        transition: "opacity 0.5s ease", 
+        "&:hover": {
+            opacity:0,
+            backgroundImage: `url(${test})`,
+            backgroundSize: "contain",
+        }
+        // display: 'flex',
+        // flexDirection: 'column',
+        // justifyContent: 'flex-end',
+        // display: 'flex',
+        // flexDirection: 'column',
+        // justifyContent: 'space-between'
+    },
+    dateStyle : {
+        // alignItems:'flex-end',
+        // justifyContent:'flex-end',
+        fontSize:'1.2vh',
+        fontWeight:'100'
+    },
+    imgDetails: {
+        objectFit: 'scale-down', 
+        width: '100wh', 
+        height: '98vh', 
+        alignItems: 'center', 
+        justifyContent: 'center' 
+    }
 };
 const homeStyles = {
     container: {

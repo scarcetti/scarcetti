@@ -4,7 +4,7 @@ import MainDrawer from "../components/navigations/MainDrawer";
 
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "../styles/theme.js";
-import BackgroundImage from "../images/test.jpg";
+import BackgroundImage from "../images/artworks/test.jpg";
 // import BackgroundImage from "../images/luchtech.png";
 
 const style = {}

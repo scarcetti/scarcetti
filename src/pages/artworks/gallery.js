@@ -1,6 +1,7 @@
 import * as React from "react";
 // import Gallery from "../../components/bodies/gallery";
-import Gallery from "../../components/Artworks/Gallery";
+import GalleryList from "../../components/Artworks/GalleryList.js";
+// import GalleryGrid from "../../components/Artworks/GalleryGrid.js";
 
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "../../styles/theme.js";
@@ -26,7 +27,8 @@ const GalleryPage = () => {
             flex: 1,
           }}
         >
-          <Gallery />
+          <GalleryList />
+          {/* <GalleryGrid /> */}
         </div>
       </ThemeProvider>
     </div>

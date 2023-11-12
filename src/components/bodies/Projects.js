@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Typography, useMediaQuery, Card, CardMedia, CardContent, Grid, Box, Button } from "@mui/material";
 import style from "../../styles/style";
-import ArtsImage from "../../images/scarcetti.png";
+import ArtsImage from "../../images/artworks/scarcetti.png";
 import UXImage from "../../images/ux_cover.png";
 import imgWebsiteBlue from "../../images/website_blue.png";
 import { navigate } from "gatsby";
@@ -18,6 +18,8 @@ const Projects = () => {
     const xsWidth = useMediaQuery('(max-width:899px)');
     const fontSize = xsWidth ? "5px" : "2rem";
 
+    
+
     return (
         <Container maxWidth="false" sx={{ minHeight: "100vh", marginTop: "var(--drawer-width)" }}>
             <Container sx={globalStyle.container} maxWidth="md">
@@ -32,7 +34,44 @@ const Projects = () => {
                 >
                     <Grid container spacing={1}>
                         <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
-                            <Button type="button" onClick={() => navigate("/")}>
+                            <Card 
+                                sx={{ ...projectsStyles.card, backgroundImage: `url(${ArtsImage})` }} 
+                                onClick={() => navigate("/artworks/gallery/")}
+                            >
+                                <CardContent sx={{ ...projectsStyles.title, }}>
+                                    <Typography variant="body2" color="white">
+                                        Artworks
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
+                            <Card 
+                                sx={{ ...projectsStyles.card, backgroundImage: `url(${UXImage})` }} 
+                                onClick={() => navigate("/artworks/gallery/")}
+                            >
+                                <CardContent sx={{ ...projectsStyles.title, }}>
+                                    <Typography variant="body2" color="white">
+                                        UX/UI Designs
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
+                            <Card 
+                                sx={{ ...projectsStyles.card, backgroundImage: `url(${imgWebsiteBlue})` }} 
+                                onClick={() => navigate("/artworks/gallery/")}
+                            >
+                                <CardContent sx={{ ...projectsStyles.title, }}>
+                                    <Typography variant="body2" color="white">
+                                        Websites
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                       {/*  <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
+
+                            <Button type="button" onClick={() => navigate("/artworks/gallery/")}>
                                 <Card sx={projectsStyles.card}>
                                     <CardMedia
                                         component="img"
@@ -50,43 +89,43 @@ const Projects = () => {
                             </Button>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
-                        <Button type="button" onClick={() => navigate("/")}>
-                            
-                             <Card sx={projectsStyles.card}>
-                                <CardMedia
-                                    component="img"
-                                    height="194"
-                                    image={ArtsImage}
-                                    alt="arts"
-                                    sx={projectsStyles.img}
-                                />
-                                <CardContent sx={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))' }}>
-                                    <Typography variant="h6" color="white" align="center">
-                                        UX/UI Designs
-                                    </Typography>
-                                </CardContent>
-                            </Card>
+                            <Button type="button" onClick={() => navigate("/")}>
+
+                                <Card sx={projectsStyles.card}>
+                                    <CardMedia
+                                        component="img"
+                                        height="194"
+                                        image={ArtsImage}
+                                        alt="arts"
+                                        sx={projectsStyles.img}
+                                    />
+                                    <CardContent sx={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))' }}>
+                                        <Typography variant="h6" color="white" align="center">
+                                            UX/UI Designs
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
                             </Button>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
-                        <Button type="button" onClick={() => navigate("/")}>
+                            <Button type="button" onClick={() => navigate("/")}>
 
-                             <Card sx={projectsStyles.card}>
-                                <CardMedia
-                                    component="img"
-                                    height="194"
-                                    image={ArtsImage}
-                                    alt="arts"
-                                    sx={projectsStyles.img}
-                                />
-                                <CardContent sx={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))' }}>
-                                    <Typography variant="h6" color="white" align="center">
-                                        Websites
-                                    </Typography>
-                                </CardContent>
-                            </Card>
+                                <Card sx={projectsStyles.card}>
+                                    <CardMedia
+                                        component="img"
+                                        height="194"
+                                        image={ArtsImage}
+                                        alt="arts"
+                                        sx={projectsStyles.img}
+                                    />
+                                    <CardContent sx={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))' }}>
+                                        <Typography variant="h6" color="white" align="center">
+                                            Websites
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
                             </Button>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </Container>
             </Container>
