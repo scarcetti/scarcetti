@@ -213,11 +213,34 @@ const galleryStyles = {
     },
     imgDetails: {
         objectFit: 'scale-down', 
-        width: '100wh', 
-        height: '98vh', 
+        width: '100%', 
+        height: '100%', 
+        // alignItems: 'center', 
+        // justifyContent: 'center' 
+    },
+
+    prevImage:{
+        // width: '5vw',
+       
+        height: '100%', 
+    },
+    container:{
+        height: '80%', 
+        width:'80%',
         alignItems: 'center', 
-        justifyContent: 'center' 
-    }
+    },
+    leftContainer:{
+        backgroundSize:'contan',
+        justifyContent: 'right',
+        
+    },
+    rightContainer:{
+        backgroundSize:'contain',
+        alignItems: 'center', 
+        justifyContent: 'left',
+        background:'red',
+        
+    },
 };
 const homeStyles = {
     container: {
@@ -422,3 +445,13 @@ export default {
     sunsetPalette,
     galleryStyles
 };
+// backgroundSizes:
+// auto: The default value. The background image is displayed in its original size.
+
+// cover: The background image is scaled to cover the entire container, maintaining its aspect ratio. Some parts of the image might be cropped.
+
+// contain: The background image is scaled to fit within the container while maintaining its aspect ratio. The entire image is visible, but there might be empty space within the container.
+
+// length values (e.g., px, %, etc.): You can use specific length values to set the width and height of the background image. For example, background-size: 50% 50%; will make the background image cover 50% of the container's width and 50% of its height.
+
+// cover/contain with multiple values: You can also use two values to specify separate horizontal and vertical sizes. For example, background-size: 50% 100%; will make the background image cover 50% of the container's width and 100% of its height.

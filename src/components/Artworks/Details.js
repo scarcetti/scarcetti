@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
-import { Box, Container, Button, Typography } from '@mui/material';
+import { Box, Container, Button, Typography, Grid } from '@mui/material';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 import style from "../../styles/style";
 
@@ -34,6 +34,8 @@ const Details = () => {
   const maxSteps = images.length;
   const containerWidth = 100 / maxSteps;
   const galleryStyles = style.galleryStyles;
+  const prev = activeStep - 1;
+  const next = activeStep + 1;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => (prevActiveStep + 1) % maxSteps);
@@ -44,7 +46,7 @@ const Details = () => {
   };
 
   return (
-    <Container maxWidth="false" sx={{ minHeight: "100vh", marginTop: "var(--drawer-width)", justifyContent: 'center', alignItems: 'center' }} >
+    <Container maxWidth="false" sx={{ minHeight: "100vh", marginTop: "var(--drawer-width)", }} >
       <div
         style={{
           height: '95vh',
@@ -52,34 +54,72 @@ const Details = () => {
           overflow: 'hidden',
           display: 'flex',
           position: 'relative',
+          justifyContent: 'center',
+          alignItems: 'center',
           // background: 'red'
         }}
       >
-        {images.map((step, index) => {
-          const distance = index - activeStep;
-          const isVisible = Math.abs(distance) <= 1;
-          const opacity = isVisible ? (index === activeStep ? 1 : 0.5) : 0;
+        <Grid container sx={{ justifyContent: 'center', alignItems: 'center' }} >
 
-          return (
-            <div
-              key={step.label}
+          {/* Left container */}
+          <Grid item xs={2} sm={2} md={2} xl={2} lg={2}
+            sx={{
+              ...galleryStyles.leftContainer,
+              ...galleryStyles.container,
+              // alignItems: 'center',
+              // position: 'absolute',
+              // justifyContent: 'left',
+              left: '-80%',
+              '@media (max-width: 600px)': {
+                left: '-60%', // Adjust the value for smaller screens
+              },
+              background: 'blue',
+            }}>
+            <img
+              src={BackgroundImage4}
               style={{
-                flex: `0 0 ${containerWidth}vw`,
-                position: 'absolute',
-                left: `calc(50% - ${containerWidth / 2}vw + ${distance * containerWidth}vw)`,
-                opacity,
-                transform: isVisible ? 'scale(0.5)' : 'scale(1)',
-                zIndex: isVisible ? 0 : -1,
+                ...galleryStyles.imgDetails,
+                ...galleryStyles.prevImage,
               }}
-            >
-              <img
-                src={step.imgPath}
-                alt={step.label}
-                style={{ ...galleryStyles.imgDetails }}
-              />
-            </div>
-          );
-        })}
+            />
+          </Grid>
+
+          {/* center image */}
+          <Grid item xs={8} sm={8} md={8} xl={8} lg={8}
+            sx={{
+              ...galleryStyles.container,
+              // display: 'flex', 
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: 'absolute'
+
+            }}>
+            <img
+              src={BackgroundImage1}
+              style={{
+                ...galleryStyles.imgDetails,
+                backgroundSize: 'contain',
+                // ...galleryStyles.prevImage,
+              }}
+            />
+          </Grid>
+
+          {/* right image */}
+          <Grid item xs={2} sm={2} md={2} xl={2} lg={2}
+            sx={{
+              background: 'blue',
+              display: 'flex',
+              ...galleryStyles.rightContainer, ...galleryStyles.container, alignItems: 'center'
+            }}>
+            {/*  <img
+              src={BackgroundImage4}
+              style={{
+                // ...galleryStyles.prevImage,
+              }}
+            /> */}
+          </Grid>
+        </Grid>
+
       </div>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
         <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
