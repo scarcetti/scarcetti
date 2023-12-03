@@ -4,46 +4,54 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby Minimal Starter
+  My Development Experience
 </h1>
 
-## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+### <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel" width="25"/> Laravel
+- Proficient in building web applications using the Laravel PHP framework.
+- Experience with Laravel Eloquent ORM for database interactions.
+- Knowledge of Laravel Blade templating engine.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+### <img src="https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg" alt="Vue.js" width="25"  />Vue.js
+- Skilled in developing dynamic and responsive user interfaces with Vue.js.
+- Proficient in state management using Vuex.
+- Experience with Vue Router for client-side routing.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+### <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React.js" width="25" />React.js
+- Competent in building modern and efficient user interfaces with React.js.
+- Familiarity with state management using React Hooks and Context API.
+- Experience integrating third-party libraries and components.
 
-2.  **Start developing.**
+### <img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="SQL" width="25" />MySQL
+- Strong understanding of relational databases and SQL.
+- Proficient in writing complex SQL queries for data retrieval and manipulation.
 
-    Navigate into your new site’s directory and start it up.
+### <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="PostgreSQL" width="25" />PostgreSQL
+- Experience with PostgreSQL as a robust relational database system.
+- Knowledge of database design, indexing, and optimization.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+### <img src="https://www.vectorlogo.zone/logos/github/github-tile.svg" alt="GitHub" width="25">GitHub
+- Proficient in using GitHub for version control and collaborative development.
+- Experience with pull requests, branching, and merging workflows.
 
-3.  **Open the code and start customizing!**
+### <img src="https://www.vectorlogo.zone/logos/gitlab/gitlab-icon.svg" alt="GitLab" width="25" />GitLab
+- Familiarity with GitLab for version control and continuous integration.
+- Experience setting up CI/CD pipelines and runners.
 
-    Your site is now running at http://localhost:8000!
+### <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="Java" width="25" />Java
+- Competent in Java programming language.
+- Experience with Java-based web development and enterprise applications.
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+## Version Control
+- Proficient in using Git for version control.
+- Experience with Git branching strategies and resolving merge conflicts.
 
-4.  **Learn more**
+## Additional Skills
+- Familiarity with RESTful API design and consumption.
+- Strong problem-solving and debugging skills.
+- Excellent communication and collaboration within a team.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Contact
+chenvirtucio@gmail.com
 
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
