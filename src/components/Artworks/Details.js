@@ -65,21 +65,12 @@ const Details = () => {
           <Grid item xs={2} sm={2} md={2} xl={2} lg={2}
             sx={{
               ...galleryStyles.leftContainer,
-              ...galleryStyles.container,
-              // alignItems: 'center',
-              // position: 'absolute',
-              // justifyContent: 'left',
-              left: '-80%',
-              '@media (max-width: 600px)': {
-                left: '-60%', // Adjust the value for smaller screens
-              },
               background: 'blue',
             }}>
             <img
               src={BackgroundImage4}
               style={{
-                ...galleryStyles.imgDetails,
-                ...galleryStyles.prevImage,
+                ...galleryStyles.prevImage
               }}
             />
           </Grid>
@@ -88,18 +79,17 @@ const Details = () => {
           <Grid item xs={8} sm={8} md={8} xl={8} lg={8}
             sx={{
               ...galleryStyles.container,
-              // display: 'flex', 
+              display: 'flex', 
               justifyContent: 'center',
               alignItems: 'center',
-              position: 'absolute'
+              // background: 'red'
 
             }}>
             <img
-              src={BackgroundImage1}
+              src={BackgroundImage3}
               style={{
                 ...galleryStyles.imgDetails,
                 backgroundSize: 'contain',
-                // ...galleryStyles.prevImage,
               }}
             />
           </Grid>
@@ -111,12 +101,14 @@ const Details = () => {
               display: 'flex',
               ...galleryStyles.rightContainer, ...galleryStyles.container, alignItems: 'center'
             }}>
-            {/*  <img
-              src={BackgroundImage4}
+             <img
+              src={BackgroundImage2}
               style={{
-                // ...galleryStyles.prevImage,
+                ...galleryStyles.prevImage,
+                position: 'relative',
+                background: 'rgba(0, 0, 0, 0.001)' ,
               }}
-            /> */}
+            />
           </Grid>
         </Grid>
 

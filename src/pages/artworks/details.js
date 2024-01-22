@@ -4,7 +4,7 @@ import Details from "../../components/Artworks/Details";
 
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "../../styles/theme.js";
-import BackgroundImage from "../../images/7.png";
+import BackgroundImage from "../../images/10.png";
 // import BackgroundImage from "../../images/test.jpg";
 
 const style = {}

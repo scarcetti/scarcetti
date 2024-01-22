@@ -213,16 +213,19 @@ const galleryStyles = {
     },
     imgDetails: {
         objectFit: 'scale-down', 
-        width: '100%', 
-        height: '100%', 
+        width: '80%', 
+        height: '80%', 
         // alignItems: 'center', 
         // justifyContent: 'center' 
     },
 
     prevImage:{
         // width: '5vw',
-       
+        objectFit: 'scale-down', 
+        width: '100%', 
         height: '100%', 
+        // background: 'rgba(0, 0, 0, 0.5) !important',
+        
     },
     container:{
         height: '80%', 
@@ -231,7 +234,7 @@ const galleryStyles = {
     },
     leftContainer:{
         backgroundSize:'contan',
-        justifyContent: 'right',
+        background: 'blue',
         
     },
     rightContainer:{
