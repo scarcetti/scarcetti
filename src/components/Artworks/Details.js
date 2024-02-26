@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
-import { Box, Container, Button, Typography, Grid } from '@mui/material';
+import { Box, Container, Button, Typography, Grid, Card, useMediaQuery } from '@mui/material';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 import style from "../../styles/style";
+
+import { navigate } from "gatsby";
 
 import BackgroundImage1 from "../../images/artworks/tree1.gif";
 import BackgroundImage2 from "../../images/artworks/drenks.png";
 import BackgroundImage3 from "../../images/artworks/prj1.jpg";
 import BackgroundImage4 from "../../images/artworks/frog_under_the_tree.png";
+import BackgroundImage5 from "../../images/artworks/test.jpg";
 
 const images = [
   {
-    label: 'Test',
+    label: 'Sunset',
     imgPath: BackgroundImage1
   },
   {
@@ -26,6 +29,10 @@ const images = [
     label: 'Cozy Frog',
     imgPath: BackgroundImage4
   },
+  {
+    label: 'Clouds',
+    imgPath: BackgroundImage5
+  },
 ];
 
 const Details = () => {
@@ -34,92 +41,108 @@ const Details = () => {
   const maxSteps = images.length;
   const containerWidth = 100 / maxSteps;
   const galleryStyles = style.galleryStyles;
-  const prev = activeStep - 1;
-  const next = activeStep + 1;
+  const prev = (activeStep - 1 + maxSteps) % maxSteps;
+  const next = (activeStep + 1) % maxSteps;
+
+  const isMediumOrSmallScreen = useMediaQuery(theme => theme.breakpoints.down('xl'));
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => (prevActiveStep + 1) % maxSteps);
+    setActiveStep(next);
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => (prevActiveStep - 1 + maxSteps) % maxSteps);
+    setActiveStep(prev);
   };
 
   return (
     <Container maxWidth="false" sx={{ minHeight: "100vh", marginTop: "var(--drawer-width)", }} >
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignContent:'middle', paddingTop:'10px',minHeight: '2vh',}}>
+        <Button size="small" sx={{color:'white',  alignItems:'center', backgroundColor:'black'}} onClick={() => navigate(`/artworks/gallery`)}  >
+          <KeyboardArrowLeft />Return
+        </Button>
+      </Box>
       <div
         style={{
-          height: '95vh',
-          maxWidth: '95wh',
+          height: '90vh',
+          maxWidth: '100vw',
           overflow: 'hidden',
           display: 'flex',
           position: 'relative',
           justifyContent: 'center',
           alignItems: 'center',
-          // background: 'red'
         }}
       >
         <Grid container sx={{ justifyContent: 'center', alignItems: 'center' }} >
-
-          {/* Left container */}
-          <Grid item xs={2} sm={2} md={2} xl={2} lg={2}
+          {/* LEFT IMAGE */}
+          {!isMediumOrSmallScreen &&(
+          <Grid item xl={2} lg={2}
             sx={{
               ...galleryStyles.leftContainer,
-              background: 'blue',
             }}>
-            <img
-              src={BackgroundImage4}
-              style={{
-                ...galleryStyles.prevImage
-              }}
-            />
+              
+              {/* {{next} ==1 &&( */}
+                <img
+                  src={images[prev].imgPath}
+                  style={{
+                    ...galleryStyles.prevImage
+                  }}
+                />
+            {/* )} */}
           </Grid>
-
-          {/* center image */}
-          <Grid item xs={8} sm={8} md={8} xl={8} lg={8}
+          )}
+          {/* CENTER IMAGE */}
+          <Grid item xs={12} md={12} xl={8} lg={8}
             sx={{
               ...galleryStyles.container,
-              display: 'flex', 
+              display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              // background: 'red'
-
+              flexDirection: 'column',
             }}>
             <img
-              src={BackgroundImage3}
+              src={images[activeStep].imgPath}
               style={{
                 ...galleryStyles.imgDetails,
-                backgroundSize: 'contain',
+                marginBottom: '10px',
               }}
             />
           </Grid>
 
-          {/* right image */}
-          <Grid item xs={2} sm={2} md={2} xl={2} lg={2}
+          {/* RIGHT IMAGE */}
+          {!isMediumOrSmallScreen && (
+          <Grid item xl={2} lg={2}
             sx={{
               background: 'blue',
               display: 'flex',
               ...galleryStyles.rightContainer, ...galleryStyles.container, alignItems: 'center'
             }}>
-             <img
-              src={BackgroundImage2}
+            <img
+              src={images[next].imgPath}
               style={{
                 ...galleryStyles.prevImage,
                 position: 'relative',
-                background: 'rgba(0, 0, 0, 0.001)' ,
               }}
             />
           </Grid>
+          )}
         </Grid>
-
       </div>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2,  }}>
+        <Button size="small" sx={{color:'white'}} onClick={handleBack}  >
           {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-          Back
+          Previous
         </Button>
-        <Typography>Active Step: {activeStep}</Typography>
-        <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
+        {!isMediumOrSmallScreen && (
+        <Typography variant="h4" color="white" >
+              {images[activeStep].label} {next}
+            </Typography>
+        )}
+        {isMediumOrSmallScreen && (
+        <Typography variant="h5" color="white" >
+              {images[activeStep].label}
+            </Typography>
+        )}
+        <Button size="small" sx={{color:'white'}} onClick={handleNext}>
           Next
           {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
         </Button>
@@ -129,32 +152,3 @@ const Details = () => {
 }
 
 export default Details;
-{/* {images.map((step, index) => {
-          const distance = index - activeStep;
-          const isVisible = Math.abs(distance) <= 1;
-          let zIndex = isVisible ? (index === activeStep ? 1 : 0.5) : -1;
-
-          if (distance === 1 && activeStep === maxSteps - 1) {
-            zIndex = 0.5;
-          }
-
-          return (
-            <div
-              key={step.label}
-              style={{
-                flex: `0 0 ${containerWidth}vw`,
-                position: 'absolute',
-                left: `calc(50% - ${containerWidth / 2}vw + ${distance * containerWidth}vw)`,
-                opacity: isVisible ? (index === activeStep ? 1 : 0.5) : 0,
-                transform: isVisible ? 'scale(0.8)' : 'scale(0)',
-                zIndex,
-              }}
-            >
-              <img
-                src={step.imgPath}
-                alt={step.label}
-                style={{ ...galleryStyles.imgDetails }}
-              />
-            </div>
-          );
-        })} */}

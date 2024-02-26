@@ -1,12 +1,10 @@
 import * as React from "react";
-// import Gallery from "../../components/bodies/gallery";
-import GalleryList from "../../components/Artworks/GalleryList.js";
-// import GalleryGrid from "../../components/Artworks/GalleryGrid.js";
+import GalleryGrid from "../../components/ux_designs/GalleryGrid.js";
+import GalleryList from "../../components/ux_designs/GalleryList.js";
 
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "../../styles/theme.js";
 import BackgroundImage from "../../images/10.png";
-// import BackgroundImage from "../../images/test.jpg";
 
 const style = {}
 
@@ -27,8 +25,8 @@ const GalleryPage = () => {
             flex: 1,
           }}
         >
-          <GalleryList />
-          {/* <GalleryGrid /> */}
+          {/* <GalleryList /> */}
+          <GalleryGrid />
         </div>
       </ThemeProvider>
     </div>

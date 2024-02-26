@@ -73,21 +73,26 @@ const globalStyles = {
         color: "#ffffff",
         textTransform: "none",
     },
+    scrollbars: {
+        // display: "none",
+        // overflow: "auto",
+
+    }
 };
 const projectsStyles = {
-   /*  card: {
-        maxWidth: 345, 
-        minWidth: 150, 
-        height:'300',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        background: 'rgba(255, 255, 255, 0)'
-    }, */
+    /*  card: {
+         maxWidth: 345, 
+         minWidth: 150, 
+         height:'300',
+         display: 'flex',
+         flexDirection: 'column',
+         justifyContent: 'space-between',
+         background: 'rgba(255, 255, 255, 0)'
+     }, */
     card: {
         position: 'relative',
         width: '100%',
-        height:'300px',
+        height: '300px',
         display: 'flex',
         // backgroundImage: `url(${test})`,
         backgroundSize: "cover",
@@ -97,9 +102,9 @@ const projectsStyles = {
         border: '1px solid rgba(255, 255, 255, 0.7)',
     },
     img: {
-        opacity: 4, 
-        height: '100%', 
-        width:'100%',
+        opacity: 4,
+        height: '100%',
+        width: '100%',
         objectFit: 'scale-down',
         display: 'block',
     },
@@ -112,14 +117,14 @@ const projectsStyles = {
         borderBottomLeftRadius: '3px',
         borderBottomRightRadius: '3px',
         padding: '10px',
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 }
 const galleryStyles = {
-    
+
     card: {
-    
+
         position: 'relative',
         height: '250px',
         width: '100%',
@@ -128,31 +133,31 @@ const galleryStyles = {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         borderRadius: '3px',
-        border: '1px solid rgba(255, 255, 255, 0.7)',
-        transition: "opacity 0.5s ease", 
+        // border: '1px solid rgba(255, 255, 255, 0.7)',
+        transition: "opacity 0.5s ease",
         "&:hover": {
-            transform: 'scale(1.05)',  // Optional: Add a scaling effect on hover
+            // transform: 'scale(1.05)',  // Optional: Add a scaling effect on hover
             "& .title": {
                 opacity: 1,
             },
         },
     },
     title: {
-        background: 'linear-gradient(30deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1))',
+        background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))',
         position: 'absolute',
         bottom: 0,
         // height:'80%',
         width: '100%',
-        borderBottomLeftRadius: '7px',
-        borderBottomRightRadius: '7px',
-        padding: '10px',
-        opacity:0,
+        borderBottomLeftRadius: '3px',
+        borderBottomRightRadius: '3px',
+        opacity: 0,
+        paddingTop:'100%',
         "&:hover": {
-            opacity:'100',
+            opacity: '100',
             transition: ".5s ease",
         }
     },
-    
+
     itemTitleCard: {
         position: 'absolute',
         top: 0,
@@ -163,7 +168,7 @@ const galleryStyles = {
         borderRadius: 'inherit',
     },
     cardList: {
-    
+
         position: 'relative',
         // height: '250px',
         width: '98%',
@@ -173,29 +178,29 @@ const galleryStyles = {
         backgroundPosition: "center",
         // borderRadius: '3px',
         // border: '1px solid rgba(255, 255, 255, 0.7)',
-        transition: "opacity 0.3s ease", 
+        transition: "opacity 0.3s ease",
         "&:hover": {
-            backgroundSize: "contain",
+            // backgroundSize: "contain",
             // background: 'linear-gradient(30deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
             // backgroundImage: `url(${test})`,
             // transform: 'scale(1.1)',
         }
-     
+
     },
     titleList: {
-        background: 'linear-gradient(30deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
+        background: 'linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))',
         // background: 'linear-gradient(30deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))',
         position: 'absolute',
         bottom: 0,
-        height:'100%',
+        height: '100%',
         width: '100%',
         borderBottomLeftRadius: '3px',
         borderBottomRightRadius: '3px',
         padding: '10px',
-        transition: "opacity 0.5s ease", 
+        transition: "opacity 0.5s ease",
         "&:hover": {
-            opacity:0,
-            backgroundImage: `url(${test})`,
+            opacity: 0,
+            // backgroundImage: `url(${test})`,
             backgroundSize: "contain",
         }
         // display: 'flex',
@@ -205,44 +210,39 @@ const galleryStyles = {
         // flexDirection: 'column',
         // justifyContent: 'space-between'
     },
-    dateStyle : {
+    dateStyle: {
         // alignItems:'flex-end',
         // justifyContent:'flex-end',
-        fontSize:'1.2vh',
-        fontWeight:'100'
+        fontSize: '1.2vh',
+        fontWeight: '100'
     },
     imgDetails: {
-        objectFit: 'scale-down', 
-        width: '80%', 
-        height: '80%', 
-        // alignItems: 'center', 
-        // justifyContent: 'center' 
+        // objectFit: 'scale-down',
+        width: '70%',
+        height: '70%',
+        // padding: '2%',
+        // backgroundSize: "cover",
     },
 
-    prevImage:{
+    prevImage: {
         // width: '5vw',
-        objectFit: 'scale-down', 
-        width: '100%', 
-        height: '100%', 
-        // background: 'rgba(0, 0, 0, 0.5) !important',
-        
+        // objectFit: 'scale-down',
+        width: '100%',
+        height: '100%',
+
     },
-    container:{
-        height: '80%', 
-        width:'80%',
-        alignItems: 'center', 
+    container: {
+        height: '80%',
+        width: '80%',
+        alignItems: 'center',
     },
-    leftContainer:{
-        backgroundSize:'contan',
-        background: 'blue',
-        
+    leftContainer: {
+        backgroundSize: 'contan',
+
     },
-    rightContainer:{
-        backgroundSize:'contain',
-        alignItems: 'center', 
-        justifyContent: 'left',
-        background:'red',
-        
+    rightContainer: {
+        backgroundSize: 'contain',
+
     },
 };
 const homeStyles = {
@@ -351,8 +351,8 @@ const homeStyles = {
 };
 const BluePalette = {
     test: {
-        fontFamily:"OCRAEXT",
-        color:'red'
+        fontFamily: "OCRAEXT",
+        color: 'red'
     },
     normalText: {
         color: "#0C6F9E",

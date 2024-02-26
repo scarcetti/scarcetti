@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Typography, useMediaQuery, Card, CardContent, Grid } from "@mui/material";
 import style from "../../styles/style";
-import BackgroundImage from "../../images/artworks/test.jpg";
+import BackgroundImage from "../../images/ux_designs/royalty.png";
 import BackgroundImage1 from "../../images/artworks/tree1.gif";
 import BackgroundImage2 from "../../images/artworks/drenks.png";
 import BackgroundImage3 from "../../images/artworks/prj1.jpg";
@@ -38,7 +38,7 @@ const GalleryGrid = () => {
   return (
     <Container maxWidth="false" sx={{ minHeight: "100vh", marginTop: "var(--drawer-width)" , }}>
       <Typography variant="h2" color="white" align="center">
-        Artworks
+        UX/UI Designs
       </Typography>
       <Container maxWidth="false" style={{ ...globalStyle.scrollbars, maxHeight: '92vh', overflowY: 'auto' ,}}>
         <Grid container spacing={1} >

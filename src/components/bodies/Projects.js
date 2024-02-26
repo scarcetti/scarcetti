@@ -48,7 +48,7 @@ const Projects = () => {
                         <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
                             <Card 
                                 sx={{ ...projectsStyles.card, backgroundImage: `url(${UXImage})` }} 
-                                onClick={() => navigate("/artworks/gallery/")}
+                                onClick={() => navigate("/ux_designs/gallery/")}
                             >
                                 <CardContent sx={{ ...projectsStyles.title, }}>
                                     <Typography variant="body2" color="white">
@@ -69,63 +69,6 @@ const Projects = () => {
                                 </CardContent>
                             </Card>
                         </Grid>
-                       {/*  <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
-
-                            <Button type="button" onClick={() => navigate("/artworks/gallery/")}>
-                                <Card sx={projectsStyles.card}>
-                                    <CardMedia
-                                        component="img"
-                                        height="194"
-                                        image={ArtsImage}
-                                        alt="arts"
-                                        sx={projectsStyles.img}
-                                    />
-                                    <CardContent sx={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))' }}>
-                                        <Typography variant="h6" color="white" align="center">
-                                            Artworks
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            </Button>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
-                            <Button type="button" onClick={() => navigate("/")}>
-
-                                <Card sx={projectsStyles.card}>
-                                    <CardMedia
-                                        component="img"
-                                        height="194"
-                                        image={ArtsImage}
-                                        alt="arts"
-                                        sx={projectsStyles.img}
-                                    />
-                                    <CardContent sx={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))' }}>
-                                        <Typography variant="h6" color="white" align="center">
-                                            UX/UI Designs
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            </Button>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4} justifyContent="center" sx={{ display: 'flex', justifyContent: 'center' }} >
-                            <Button type="button" onClick={() => navigate("/")}>
-
-                                <Card sx={projectsStyles.card}>
-                                    <CardMedia
-                                        component="img"
-                                        height="194"
-                                        image={ArtsImage}
-                                        alt="arts"
-                                        sx={projectsStyles.img}
-                                    />
-                                    <CardContent sx={{ background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))' }}>
-                                        <Typography variant="h6" color="white" align="center">
-                                            Websites
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            </Button>
-                        </Grid> */}
                     </Grid>
                 </Container>
             </Container>

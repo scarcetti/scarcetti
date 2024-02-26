@@ -1,7 +1,6 @@
 import * as React from "react";
 // import Gallery from "../../components/bodies/gallery";
-import GalleryList from "../../components/Artworks/GalleryList.js";
-// import GalleryGrid from "../../components/Artworks/GalleryGrid.js";
+import Details from "../../components/ux_designs/Details";
 
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "../../styles/theme.js";
@@ -10,7 +9,7 @@ import BackgroundImage from "../../images/10.png";
 
 const style = {}
 
-const GalleryPage = () => {
+const ArtworkDetails = () => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
@@ -27,14 +26,13 @@ const GalleryPage = () => {
             flex: 1,
           }}
         >
-          <GalleryList />
-          {/* <GalleryGrid /> */}
+          <Details />
         </div>
       </ThemeProvider>
     </div>
   );
 };
 
-export default GalleryPage;
+export default ArtworkDetails;
 
-export const Head = () => <title>Gallery</title>;
+export const Head = () => <title>Art name</title>;

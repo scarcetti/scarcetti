@@ -28,7 +28,7 @@ const Home = () => {
                     <span style={bluePalette.outlineText}>on social media</span>
                 </Typography>
                 <Typography align="center" variant="subtitle1" sx={bluePalette.normalText} style={{ transition: "font-size 0.3s" }}>
-                    I'm an artist, front-end developer, and a UX/UI designer
+                    I'm a digital artist, front-end developer, and a UX/UI designer
                 </Typography>
                 <Container
                     sx={{
